@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "juwan";
+    src: url("../font/Yekan\ Bakh\ EN\ 04\ Regular.woff") format("woff");
+    font-weight: 500;
+
+}
+
+@font-face {
+    font-family: "juwan";
+    src: url("../font/Yekan\ Bakh\ EN\ 06\ Bold.woff") format("woff");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "juwan-fa-num";
+    src: url("../font/Yekan_Bakh_Number_FA_04_Regular.woff") format("woff");
+    font-weight: 500;
+
+}
+
+@font-face {
+    font-family: "juwan-fa-num";
+    src: url("../font/Yekan_Bakh_Number_FA_06_Bold.woff") format("woff");
+    font-weight: 600;
+}
+
+
+
+
+
+:root {
+    --jwdark: #333333;
+    --jwlight: #E5E5E5;
+    --jwminlight: rgb(190, 190, 190);
+}
+
+html {
+    scroll-behavior: smooth;
+    color: var(--rbgray);
+}
+
+::placeholder {
+    color: var(--rbgray-light) !important;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.bg-dark {
+    background: var(--jwdark) !important;
+}
+.bg-min-light {
+    background: var(--jwminlight) !important;
+}
+
+.border {
+    border: 1px solid var(--jwdark) !important;
+}
+
+.border-light {
+    border: 1px solid var(--jwlight) !important;
+}
+.border-dark-bottom{
+    border-bottom: 1px solid var(--jwdark);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+*,
+a {
+    font-family: juwan-fa-num, juwan;
+    color: var(--jwdark);
+}
+
+a:hover {
+    color: var(--jwdark);
+    text-decoration: none;
+}
+
+.fw-1 {
+    font-weight: 500;
+}
+
+.fw-2 {
+    font-weight: 600;
+}
+
+.fw-3 {
+    font-weight: 700;
+}
+
+.fw-4 {
+    font-weight: 900;
+}
+
+.f-2 {
+    font-size: 2rem !important;
+}
+
+.f-3 {
+    font-size: 3rem !important;
+}
+
+.f-4 {
+    font-size: 4rem !important;
+}
+
+.f-15 {
+    font-size: 1.5rem !important;
+}
+.f-05{
+    font-size: 0.5rem;
+}
+.f-08{
+    font-size: 0.8rem;
+}
+.z-100 {
+    z-index: 100;
+}
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-0 {
+    z-index: 0;
+}
+
+.z-n1 {
+    z-index: -1;
+}
+
+.hover-bright:hover{
+    transition: filter 0.5s;
+    filter: brightness(150%);
+}
+
+@media (min-width: 1200px) {
+    .pr-lg-7 {
+        padding-left: 10rem;
+    }
+
+    .pl-lg-7 {
+        padding-right: 10rem;
+    }
+}
+
+.pretty .state label:after, .pretty .state label:before {
+    top: calc((0% - (100% - 1em)) - 6%)!important;
+}
+.pretty .state label:before {
+    
+    border-color: var(--jwdark)!important;
+}
+.pretty.p-default input:checked~.state label:after {
+    border:none;
+    border:3px solid white;
+    background-color: var(--jwdark)!important;
+}
+#amount{
+    font-size: 12px; 
+    text-align: center;
+    width: 100%;
+}
+
+
+.hover-link{
+    width:48px;
+    height: 48px;
+    line-height: 54px;
+    text-align: center;
+    bottom:95px;
+    left:25px;
+    cursor: pointer;
+}
+.hover-link:hover{
+    background-color: var(--jwdark)!important;
+    color: white!important;
+}
+
+.hover-link:hover i{
+    color: white!important;
+}
