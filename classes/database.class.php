@@ -1,9 +1,9 @@
 <?php
 Class Database{
     const HOST = "localhost";
-    const USERNAME = "root";
-    const PASSWORD = "";
-    const DATABASE = "juwan";
+    const USERNAME = "danial";
+    const PASSWORD = "WTFIS0124";
+    const DATABASE = "juwan_catalog";
     
     public $connection;
 
