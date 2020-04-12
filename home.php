@@ -62,8 +62,12 @@ $database = new Database();
 
     <div class="home-footer-background bg-min-light z-n1 mt-n7">
     <div class="container">
-    <div class="row ">
-    <p style="padding-top:9rem" class="w-100 text-center fw-2">تست</p>
+    <div class="row pl-3 text-center ">
+    <p style="padding-top:9rem" class="w-100 mb-n1 fw-2"><strong>آدرس  :  </strong>
+    خیابان فردوسي، خیابان منوچهري، پاساژ سينا، طبقه همكف، پلاک 
+    ١٢<br>
+    <strong>تماس : </strong><a href="09014444230" dir="ltr">0901 444 4230</a>
+    </p>
         
     </div>
         

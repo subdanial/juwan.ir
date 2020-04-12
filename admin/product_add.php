@@ -155,29 +155,43 @@ $categories = $database->categories_index();
                     پالت رنگ
                   </button>
                   <div class="dropdown-menu ">
+
+
                     <div class="colorbox p-2">
+                     
                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#FFFFFF" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#e60000" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#6600cc" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#ffff00" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#ff9966" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#FE0000" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#B3E0FF" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#FEC3D7" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#999967" name=""></div>
+                       
                       </div>
+                      
                       <div class="d-flex">
-                        <div class="color pointer color_add m-1" data-content="#00e673" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#000099" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#00ffff" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#000000" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#D9D9D9" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#FEFF80" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#FFFF01" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#673301" name=""></div>
+                      
+                      </div>
+                      
+                      <div class="d-flex">
+                        <div class="color pointer color_add m-1" data-content="#E60000" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#333300" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#ff0080" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#01FFFF" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#01009A" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#00E672" name=""></div>
                       </div>
+                      
                       <div class="d-flex">
-                      <div class="color pointer color_add m-1" data-content="#999966" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#663300" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#ff9900" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#009900" name=""></div>
-                        <div class="color pointer color_add m-1" data-content="#660066" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#800000" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#FE9900" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#6700CD" name=""></div>
+                        <div class="color pointer color_add m-1" data-content="#0000FE" name=""></div>
                       </div>
-
 
                     </div>
                   </div>

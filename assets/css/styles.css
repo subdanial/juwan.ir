@@ -2,6 +2,9 @@
     padding-top: 0.7rem;
 }
 
+.state.color{
+    width:18px;
+}
 
 .colorbox .color {
     margin-top: 2px;
@@ -76,4 +79,7 @@
     bottom: 0;
     width:100%;
     z-index: 101;
+}
+.popover-body{
+    text-align: center!important;
 }

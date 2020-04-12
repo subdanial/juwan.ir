@@ -85,6 +85,21 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
     $number_of_pages = ceil($number_of_results/$perpage);
 ?>
 
+    <footer class="position-fixed  w-100 bg-white" style="z-index:10; bottom:0px;">
+        <div class="container border-top">
+            <div class="row p-1">
+                <div class="col">
+                    <strong>آدرس : </strong>
+                    خیابان فردوسي، خیابان منوچهري، پاساژ سينا، طبقه همكف، پلاک
+                    ١٢
+                </div>
+                <div class="col">
+                    <strong>تماس : </strong><a class="mr-1" href="09014444230" dir="ltr">0901 444 4230</a> |
+                    <strong class="ml-1"> تلگرام : </strong><a href="https://t.me/Juwanorder" dir="ltr">@Juwanorder</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <nav id="my-menu" class="z-100">
         <ul>
@@ -101,15 +116,16 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                     <div class="col-2"> <a href="#my-menu">
                             <i class="fas f-2 pt-2 mt-1 pl-4 fa-bars"></i>
                         </a></div>
-                    <div class="col-8 p-0"> <img src="assets/img/logo/logo-dark-mini.png"
-                            class="d-block mt-2 mx-auto w-50" alt="">
+                    <div class="col-8 p-0">
+                        <a href="home.php"><img src="assets/img/logo/logo-dark-mini.png"
+                                class="d-block mt-2 mx-auto w-50" alt=""></a>
                         <span class="d-block text-center fw-2 pt-1">فروشگاه لباس عمده ژوان</span></div>
 
                     <div class="col-2"></div>
                 </div>
             </div>
             <div class="logo d-none d-md-block w-10 mx-auto pt-3">
-                <a href="index.php"> <img src="assets/img/logo/logo-dark-mini.png" class="w-75 mx-auto d-block"> </a>
+                <a href="home.php"> <img src="assets/img/logo/logo-dark-mini.png" class="w-75 mx-auto d-block"> </a>
             </div>
 
             <div class="d-none d-md-flex justify-content-center  ">
@@ -118,7 +134,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
         </nav>
         <!-- navigation end -->
 
-        <div class="container mt-3">
+        <div class="container mt-3 ">
             <div class="row">
                 <div class="d-none d-lg-block col-lg-2">
                     <div class="sidebar">
@@ -153,7 +169,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                             <div class="form-inline">
 
                                 <?php foreach($database->get_colors($cat_id) as $color): ?>
-                                <div class="pretty p-default ml-n1 pl-2">
+                                <div class="pretty p-default ml-n1 pl-2 mb-2">
                                     <input type="checkbox" class="color url_filter" value="<?=$color?>" />
                                     <div class="state color" data-content="<?=$color?>">
                                         <label></label>
@@ -253,7 +269,10 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                                 <?php endforeach; ?>
                             </div>
 
-                            <button class="hover-link rounded-circle bg-white border-light position-absolute" title="ذخیره لینک" data-toggle="tooltip" data-clipboard-text="http://<?=$_SERVER['HTTP_HOST']?>/product/<?=$product['id']?>"><i
+                            <button class="hover-link rounded-circle bg-white border-light position-absolute"
+                                data-content="لینک محصول ذخیره شد، میتوانید از ایدی <a href='https://t.me/Juwanorder' class='text-primary' >Juwanorder@</a> در تلگرام سفارش دهید"
+                                data-toggle="popover"
+                                data-clipboard-text="http://<?=$_SERVER['HTTP_HOST']?>/product/<?=$product['id']?>"><i
                                     class="fas fa-link    "></i></button>
 
 
@@ -324,7 +343,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                 <div class="form-inline">
 
                     <?php foreach($database->get_colors($cat_id) as $color): ?>
-                    <div class="pretty p-default ml-n1 pl-2">
+                    <div class="pretty  ml-n1 pl-2 mb-2 ">
                         <input type="checkbox" class="color url_filter" value="<?=$color?>" />
                         <div class="state color" data-content="<?=$color?>">
                             <label></label>
@@ -604,10 +623,20 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                 return (new_url);
             }
 
-            $(function () {
-             $('[data-toggle="tooltip"]').tooltip()
-            })
-          
+            $(document).ready(function () {
+
+                $('[data-toggle="popover"]').popover({
+                    html: true,
+                    placement: 'top',
+                    delay: {
+                        hide: 1000 // doesn't do anything
+                    }
+                }).on('shown.bs.popover', function () {
+                    setTimeout(function (a) {
+                        a.popover('hide');
+                    }, 3000, $(this));
+                });
+            });
         </script>
         </button>
 </body>

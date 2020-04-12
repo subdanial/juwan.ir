@@ -5,6 +5,23 @@ AOS.init({
 document.addEventListener(
 	"DOMContentLoaded", () => {
 		new Mmenu( "#my-menu", {
+
+			"navbars": [
+				{
+				   "position": "bottom",
+				   "content": [
+					 `<p class="w-100 mx-auto text-center pt-4 px-3 text-white ">
+					 آدرس  : 
+					 خیابان فردوسي، خیابان منوچهري، پاساژ سينا، طبقه همكف، پلاک 
+					 ١٢ <br>
+					 تماس : 0901 444 4230 
+					</p>
+					 `
+					 
+				   ]
+				}
+			 ],
+
 			"navbar" :{
 				"title":"<span class='text-white text-left'>فروشگاه لباس عمده ژوان</span>"
 			},
@@ -19,11 +36,11 @@ document.addEventListener(
 			
 			  ],
 			  "bottom": [
-				 "<a href='#/'><i class='fab text-white fa-telegram'></i></a>",
-				 "<a href='#/'><i class='fab text-white fa-instagram-square'></i></a>",
-				 "<a href='#/'><i class='fas text-white fa-phone-square'></i></a>"
+				 "<a href='https://t.me/juwancomplex'><i class='fab text-white fa-telegram'></i></a>",
+				 "<a href='tel:09014444230'><i class='fas text-white fa-phone-square'></i></a>"
 			  ]
 		   }
+		   
 		});
 	}
 );
