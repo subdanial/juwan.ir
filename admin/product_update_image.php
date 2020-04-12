@@ -15,7 +15,7 @@ $total = count($_FILES['image']['name']);
 for( $i=0 ; $i < $total ; $i++ ) {
   $tmpFilePath = $_FILES['image']['tmp_name'][$i];
   if ($tmpFilePath != ""){
-    $newFilePath = "../uploads/2/" . rand(1000,1000000000) . $_FILES['image']['name'][$i];
+    $newFilePath = "../uploads/img/" . rand(1000,1000000000) . $_FILES['image']['name'][$i];
     if(move_uploaded_file($tmpFilePath, $newFilePath)) {
 
       array_push($images_parameter,"\"http://".$_SERVER['HTTP_HOST'].implode(explode("..",$newFilePath))."\"");
