@@ -455,8 +455,6 @@ $categories = $database->categories_index();
     });
 
     // bootstrapfile
-
-
     document.querySelector('.custom-file-input').addEventListener('change', function (e) {
       var fileName = []
       $.each($("#customFile")[0].files, function (key) {

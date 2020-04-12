@@ -545,6 +545,17 @@ $product = $database->product_get($_GET['item']);
       });
     });
 
+
+    // bootstrapfile
+    document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+      var fileName = []
+      $.each($("#customFile")[0].files, function (key) {
+        fileName.push($("#customFile")[0].files[key].name)
+      })
+      var nextSibling = e.target.nextElementSibling
+      nextSibling.innerText = fileName
+    })
+
     //lastsizeindex
     $.each($(".input_size"),function(){
       isize = parseInt($(this).attr('id').split('size')[1]);
