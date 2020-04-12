@@ -39,7 +39,7 @@ for( $i=0 ; $i < $total ; $i++ ) {
   if ($tmpFilePath != ""){
     $newFilePath = "../uploads/img/" . $_FILES['image']['name'][$i];
     if(move_uploaded_file($tmpFilePath, $newFilePath)) {
-      array_push($images_parameter,"\"".$_SERVER['HTTP_HOST']."/".$newFilePath."\"");
+      array_push($images_parameter,"\"http:\\".$_SERVER['HTTP_HOST']."/".explode("..",$newFilePath)[1]."\"");
     }
   }
 }

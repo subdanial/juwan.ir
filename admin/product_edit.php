@@ -166,7 +166,7 @@ $product = $database->product_get($_GET['item']);
                   <div class="dropdown-menu ">
                     <div class="colorbox p-2">
 
-                    <div class="d-flex">
+                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#FFFFFF" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#FE0000" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#B3E0FF" name=""></div>
