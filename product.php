@@ -36,6 +36,23 @@ $active = '';
         </ul>
     </nav>
     
+
+    <footer class="d-none d-lg-block position-fixed  w-100 bg-white" style="z-index:10; bottom:0px;">
+        <div class="container border-top">
+            <div class="row p-1">
+                <div class="col">
+                    <strong>آدرس : </strong>
+                    خیابان فردوسي، خیابان منوچهري، پاساژ سينا، طبقه همكف، پلاک
+                    ١٢
+                </div>
+                <div class="col">
+                    <strong>تماس : </strong><a class="mr-1" href="09014444230" dir="ltr">0901 444 4230</a> |
+                    <strong class="ml-1"> تلگرام : </strong><a href="https://t.me/Juwanorder" dir="ltr">@Juwanorder</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <div class="container-fluid">
         <nav class="pb-4 pb-lg-0 mb-4">
             <div class="nav-icon d-block pt-2 pb-2 d-md-none border-bottom">
