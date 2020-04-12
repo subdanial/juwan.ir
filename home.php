@@ -30,17 +30,17 @@ $database = new Database();
             <div class="nav-icon d-block pt-2 pb-2 border-bottom">
 
                 <div class="row">
-                    <div class="col-2"> <a href="#my-menu">
+                    <div class="col-3"> <a href="#my-menu">
                             <i class="fas f-2 pt-2 mt-1 pl-4 fa-bars"></i>
                         </a></div>
-                    <div class="col-8 p-0">
+                    <div class="col-6 p-0">
                         <div class="row">
                             <div class="main-logo mx-auto mb-5">
                                 <img src="assets/img/logo/logo-dark.png" class="d-block  w-50 mx-auto">
-                                <span class="text-center f-15 w-100 pt-1 d-block">فروشگاه لباس عمده ژوان </span>
+                                <span class="text-center  w-100 pt-1 d-block" style="font-size:1.4rem">فروشگاه لباس عمده ژوان </span>
                             </div>
                         </div>
-                        <div class="col-2"></div>
+                        <div class="col-3"></div>
                     </div>
                 </div>
         </nav>
@@ -62,8 +62,9 @@ $database = new Database();
 
     <div class="home-footer-background bg-min-light z-n1 mt-n7">
     <div class="container">
+
     <div class="row pl-3 text-center ">
-    <p style="padding-top:9rem" class="w-100 mb-n1 fw-2"><strong>آدرس  :  </strong>
+    <p style="padding-top:7.5rem" class="w-100 mb-n1 fw-2"><strong>آدرس  :  </strong>
     خیابان فردوسي، خیابان منوچهري، پاساژ سينا، طبقه همكف، پلاک 
     ١٢<br>
     <strong>تماس : </strong><a href="09014444230" dir="ltr">0901 444 4230</a>
