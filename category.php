@@ -85,7 +85,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
     $number_of_pages = ceil($number_of_results/$perpage);
 ?>
 
-    <footer class="position-fixed  w-100 bg-white" style="z-index:10; bottom:0px;">
+    <footer class="d-none d-lg-block position-fixed  w-100 bg-white" style="z-index:10; bottom:0px;">
         <div class="container border-top">
             <div class="row p-1">
                 <div class="col">
