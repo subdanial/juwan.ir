@@ -311,7 +311,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
 
         </div>
 
-        <div class="bottom-bar z-100 bg-white p-0 w-100 overflow-auto pb-5">
+        <div class="bottom-bar z-100 bg-white d-lg-none p-0 w-100 overflow-auto pb-5">
             <p>
                 <a class="fw-2" data-toggle="collapse" href="#filter1" role="button" aria-expanded="true">
                     جنس
