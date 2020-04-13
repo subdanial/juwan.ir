@@ -66,9 +66,9 @@ $categories = $database->categories_index();
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <strong>محصول مورد نظر با موفقیت اضافه شد</strong> 
+      <strong>محصول مورد نظر با موفقیت اضافه شد</strong>
     </div>
-    
+
     <form action="/.php" id="new-product" method="POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-8">
@@ -158,25 +158,25 @@ $categories = $database->categories_index();
 
 
                     <div class="colorbox p-2">
-                     
+
                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#FFFFFF" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#FE0000" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#B3E0FF" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#FEC3D7" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#999967" name=""></div>
-                       
+
                       </div>
-                      
+
                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#000000" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#D9D9D9" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#FEFF80" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#FFFF01" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#673301" name=""></div>
-                      
+
                       </div>
-                      
+
                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#E60000" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#333300" name=""></div>
@@ -184,7 +184,7 @@ $categories = $database->categories_index();
                         <div class="color pointer color_add m-1" data-content="#01009A" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#00E672" name=""></div>
                       </div>
-                      
+
                       <div class="d-flex">
                         <div class="color pointer color_add m-1" data-content="#009900" name=""></div>
                         <div class="color pointer color_add m-1" data-content="#800000" name=""></div>
@@ -221,6 +221,10 @@ $categories = $database->categories_index();
           <!-- submin begin -->
           <section class="bg-white border-light p-4 mb-4">
             <button class="w-100 p-3 btn btn-lg btn-dark" id="main_submit">ثبت محصول</button>
+            <div class="progress mt-2">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
+                aria-valuemin="0" dir="ltr" aria-valuemax="100" style="width: 0%"></div>
+            </div>
           </section>
           <!-- submit end -->
           <!-- picture section begin -->
@@ -279,8 +283,8 @@ $categories = $database->categories_index();
   <script type="text/javascript" src="jquery.fancybox.min.js"></script>
   <script type="text/javascript">
     var files = [];
-            //alert
-         
+    //alert
+
 
     // fancybox
     $(document).ready(function () {
@@ -301,7 +305,7 @@ $categories = $database->categories_index();
     $(document).ready(function () {
       var searchParams = new URLSearchParams(window.location.search);
       //success
-      if(searchParams.has('sent')){
+      if (searchParams.has('sent')) {
         $(".alert-success").removeClass("d-none");
       }
     });
@@ -436,20 +440,21 @@ $categories = $database->categories_index();
       if (form_is_valid) {
         $.ajax({
 
-          xhr: function() {
-          var xhr = new window.XMLHttpRequest();
+          xhr: function () {
+            var xhr = new window.XMLHttpRequest();
 
-          xhr.upload.addEventListener("progress", function(evt) {
-          if (evt.lengthComputable) {
-         var percentComplete = evt.loaded / evt.total;
-        percentComplete = parseInt(percentComplete * 100);
-        console.log(percentComplete);
+            xhr.upload.addEventListener("progress", function (evt) {
+              if (evt.lengthComputable) {
+                var percentComplete = evt.loaded / evt.total;
+                percentComplete = parseInt(percentComplete * 100);
+                console.log(percentComplete);
+                $('.progress-bar-striped').css('width', percentComplete+'%');
 
-        if (percentComplete === 100) {
-        }
-        }
-         }, false);
-          return xhr;
+
+                if (percentComplete === 100) {}
+              }
+            }, false);
+            return xhr;
           },
           url: "product_submit.php",
           data: data,
@@ -460,7 +465,7 @@ $categories = $database->categories_index();
         }).done(function (msg) {
           console.log(msg);
 
-          // document.location = document.location+"?sent=1";
+          document.location = document.location + "?sent=1";
         });
 
 
