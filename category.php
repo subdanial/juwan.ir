@@ -165,11 +165,11 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                                 رنگ
                             </a>
                         </p>
+
                         <div class="collapse show" id="filter2">
                             <div class="form-inline">
-
                                 <?php foreach($database->get_colors($cat_id) as $color): ?>
-                                <div class="pretty p-default ml-n1 pl-2 mb-2">
+                                <div class="pretty  ml-n1 pl-2 mb-2 ">
                                     <input type="checkbox" class="color url_filter" value="<?=$color?>" />
                                     <div class="state color" data-content="<?=$color?>">
                                         <label></label>
@@ -178,6 +178,8 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                                 <?php endforeach; ?>
                             </div>
                         </div>
+
+
                         <hr>
                         <!-- color end -->
                         <p>
@@ -339,9 +341,9 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                     رنگ
                 </a>
             </p>
+
             <div class="collapse show" id="filter2">
                 <div class="form-inline">
-
                     <?php foreach($database->get_colors($cat_id) as $color): ?>
                     <div class="pretty  ml-n1 pl-2 mb-2 ">
                         <input type="checkbox" class="color url_filter" value="<?=$color?>" />
@@ -352,6 +354,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                     <?php endforeach; ?>
                 </div>
             </div>
+
             <hr>
             <!-- color end -->
             <p>
