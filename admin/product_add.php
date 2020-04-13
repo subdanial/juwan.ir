@@ -438,6 +438,7 @@ $categories = $database->categories_index();
       data.append("category_id", category);
 
       if (form_is_valid) {
+        $("#main_submit").prop('disabled', true);
         $.ajax({
 
           xhr: function () {
