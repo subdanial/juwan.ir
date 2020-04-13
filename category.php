@@ -277,7 +277,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
 
 
                             <a href="product/<?=$product['id']?>">
-                                <img src="<?=json_decode($product['images'])[1]?>"
+                                <img src="<?=json_decode($product['images'])[0]?>"
                                     class="w-100 pl-2 pr-1 pt-1 pb-1 p-lg-2 d-block mx-auto" alt="">
                                 <span class="d-block  text-center fw-2"> <?=$product['name']?></span>
                                 <span class="d-block  text-center fw-2"> کد : <?=$product['code']?></span>
