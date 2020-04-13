@@ -435,6 +435,22 @@ $categories = $database->categories_index();
 
       if (form_is_valid) {
         $.ajax({
+
+          xhr: function() {
+          var xhr = new window.XMLHttpRequest();
+
+          xhr.upload.addEventListener("progress", function(evt) {
+          if (evt.lengthComputable) {
+         var percentComplete = evt.loaded / evt.total;
+        percentComplete = parseInt(percentComplete * 100);
+        console.log(percentComplete);
+
+        if (percentComplete === 100) {
+        }
+        }
+         }, false);
+          return xhr;
+          },
           url: "product_submit.php",
           data: data,
           type: "POST",
@@ -444,7 +460,7 @@ $categories = $database->categories_index();
         }).done(function (msg) {
           console.log(msg);
 
-          document.location = document.location+"?sent=1";
+          // document.location = document.location+"?sent=1";
         });
 
 
