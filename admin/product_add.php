@@ -373,6 +373,9 @@ $categories = $database->categories_index();
     var form_is_valid = false;
     $(document).ready(function(){
     $("#main_submit").click(function (e) {
+      if(document.getElementById("customFile").files.length == 0){
+        $("#customFile").addClass('is-invalid');
+      }else{
       e.preventDefault();
       serialize_color();
       serialize_sizes();
@@ -387,16 +390,19 @@ $categories = $database->categories_index();
               if (!$(this).val()) {
                 $(this).addClass("is-invalid");
               } else {
-                if(document.getElementById("customFile").files.length != 0){
                 form_is_valid = true;
-                }else{
-                  $("#customFile").addClass('is-invalid');
-                }
               }
             })
           }
         }
       });
+    }
+
+
+
+      if (form_is_valid) {
+
+
       var sizes = [];
       $(".input_size").each(function () {
         sizes.push($(this).val());
@@ -419,13 +425,12 @@ $categories = $database->categories_index();
       $('.sizes').val(sizes);
       $('.category_id').val(category);
 
-      // var data = new FormData($("#new-product")[0])
-      // data.append("colors", colors);
-      // data.append("sizes", sizes);
-      // data.append("category_id", category);
+  
 
 
-      if (form_is_valid) {
+
+
+
       $("#last_submit").prop('disabled', false);
       } else {
         alert("مقدار فیلد ها را بررسی کنید");
@@ -446,9 +451,5 @@ $categories = $database->categories_index();
     //checkboxselet
     $(".categories:first").prop("checked", true);
 
-    $("#last_submit").click(function(){
-      $("#last_submit").prop("disabled", true);
-      $("#main_submit").prop("disabled", true);
-    })
   </script>
 </body>
