@@ -14,10 +14,6 @@ $database = new Database();
 $categories = $database->categories_index();
 
 ?>
-
-
-
-
 <head>
   <title>add_product</title>
   <meta charset="utf-8">
@@ -69,8 +65,13 @@ $categories = $database->categories_index();
       <strong>محصول مورد نظر با موفقیت اضافه شد</strong>
     </div>
 
-    <form action="/.php" id="new-product" method="POST" enctype="multipart/form-data">
+    <form action="product_submit.php" id="new-product" method="POST" enctype="multipart/form-data">
       <div class="row">
+
+      <input type="hidden" name="colors" class="colors">
+      <input type="hidden" name="sizes" class="sizes">
+      <input type="hidden" name="category_id" class="category_id">
+
         <div class="col-8">
           <section class="bg-white border-light p-4 mb-4">
             <div class="form-group">
@@ -220,28 +221,24 @@ $categories = $database->categories_index();
         <div class="col-4">
           <!-- submin begin -->
           <section class="bg-white border-light p-4 mb-4">
-            <button class="w-100 p-3 btn btn-lg btn-dark" id="main_submit">ثبت محصول</button>
-            <div class="progress mt-2">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
-                aria-valuemin="0" dir="ltr" aria-valuemax="100" style="width: 0%"></div>
-            </div>
+
+          <a class="text-white mb-2 w-100 p-3 btn btn-lg btn-dark" id="main_submit" >ثبت کردن  فرم</a>
+          <button type="submit" class="w-100 p-3 btn btn-lg btn-dark" id="last_submit" disabled>آپلود محصول</button>
+          
           </section>
           <!-- submit end -->
           <!-- picture section begin -->
 
           <section class="bg-white border-light p-4 mb-4">
             <label class="fw-2" for=""> تصاویر :</label>
-
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="customFile" name="image[]" multiple>
               <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
-
           </section>
 
           <section class="bg-white border-light p-4 mb-4">
             <label class="fw-2" for=""> دسته :</label>
-
             <?php foreach($categories as $category) :?>
             <div class="form-check">
               <label class="form-check-label">
@@ -250,8 +247,6 @@ $categories = $database->categories_index();
               </label>
             </div>
             <?php endforeach;?>
-
-
           </section>
 
 
@@ -261,7 +256,6 @@ $categories = $database->categories_index();
 
 
       </div>
-
 
 
 
@@ -282,8 +276,7 @@ $categories = $database->categories_index();
   <script src="../assets/js/bootstrap-extension.min.js"></script>
   <script type="text/javascript" src="jquery.fancybox.min.js"></script>
   <script type="text/javascript">
-    var files = [];
-    //alert
+
 
 
     // fancybox
@@ -306,11 +299,10 @@ $categories = $database->categories_index();
       var searchParams = new URLSearchParams(window.location.search);
       //success
       if (searchParams.has('sent')) {
+        if(searchParams.get('sent') == 1)
         $(".alert-success").removeClass("d-none");
       }
     });
-
-
 
     //popovers
     $(function () {
@@ -342,11 +334,9 @@ $categories = $database->categories_index();
     //color_manager
     var icolor = 0;
     var colors = [];
-
     $(".color").each(function () {
       $(this).css('background-color', $(this).attr('data-content'));
     })
-
     $('.color_add').click(function () {
       icolor++;
       $('#color_field').append(
@@ -362,11 +352,7 @@ $categories = $database->categories_index();
       $('#color_row' + button_id + '').remove();
     });
 
-
-
-
-
-    //serialize
+    //serialize color and size
     function serialize_color() {
       $(".input_color").each(function () {
         var color_values = $(this).attr('data-content');
@@ -374,7 +360,6 @@ $categories = $database->categories_index();
         colors = $.unique(colors);
       })
     }
-
     function serialize_sizes() {
       $(".input_size").each(function () {
         var size_values = $(this).val();
@@ -386,16 +371,9 @@ $categories = $database->categories_index();
 
     //form_validator
     var form_is_valid = false;
-
-
-
-
     $(document).ready(function(){
-
-    
     $("#main_submit").click(function (e) {
       e.preventDefault();
-
       serialize_color();
       serialize_sizes();
       $('input[type="text"],input[type="number"]').each(function () {
@@ -409,16 +387,16 @@ $categories = $database->categories_index();
               if (!$(this).val()) {
                 $(this).addClass("is-invalid");
               } else {
+                if(document.getElementById("customFile").files.length != 0){
                 form_is_valid = true;
+                }else{
+                  $("#customFile").addClass('is-invalid');
+                }
               }
             })
           }
         }
       });
-
-
-
-
       var sizes = [];
       $(".input_size").each(function () {
         sizes.push($(this).val());
@@ -427,7 +405,6 @@ $categories = $database->categories_index();
       $(".input_color").each(function () {
         colors.push($(this).attr('data-content'));
       });
-
       var category = $(".categories:checked").val();
       var id = $("#id").val();
       var code = $("#code").val();
@@ -436,47 +413,20 @@ $categories = $database->categories_index();
       var material = $("#material").val();
       var brand = $("#brand").val();
       var style = $("#style").val();
+      
+      
+      $('.colors').val(colors);
+      $('.sizes').val(sizes);
+      $('.category_id').val(category);
 
+      // var data = new FormData($("#new-product")[0])
+      // data.append("colors", colors);
+      // data.append("sizes", sizes);
+      // data.append("category_id", category);
 
-
-      var data = new FormData($("#new-product")[0])
-      data.append("colors", colors);
-      data.append("sizes", sizes);
-      data.append("category_id", category);
 
       if (form_is_valid) {
-        $("#main_submit").prop('disabled', true);
-        $.ajax({
-
-          xhr: function () {
-            var xhr = new window.XMLHttpRequest();
-
-            xhr.upload.addEventListener("progress", function (evt) {
-              if (evt.lengthComputable) {
-                var percentComplete = evt.loaded / evt.total;
-                percentComplete = parseInt(percentComplete * 100);
-                console.log(percentComplete);
-                $('.progress-bar-striped').css('width', percentComplete+'%');
-
-
-                if (percentComplete === 100) {}
-              }
-            }, false);
-            return xhr;
-          },
-          url: "product_submit.php",
-          data: data,
-          type: "POST",
-          cache: false,
-          processData: false,
-          contentType: false,
-        }).done(function (msg) {
-          console.log(msg);
-
-          document.location = document.location + "?sent=1";
-        });
-
-
+      $("#last_submit").prop('disabled', false);
       } else {
         alert("مقدار فیلد ها را بررسی کنید");
       }
@@ -493,7 +443,6 @@ $categories = $database->categories_index();
       var nextSibling = e.target.nextElementSibling
       nextSibling.innerText = fileName
     })
-
     //checkboxselet
     $(".categories:first").prop("checked", true);
   </script>

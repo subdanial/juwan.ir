@@ -25,9 +25,10 @@ $sizes_parameter = [];
 $total = count($_FILES['image']['name']);
 
 if(!$database->is_product_exist($code)){
-  
-for( $i=0 ; $i < $total ; $i++ ) {
 
+
+
+  for( $i=0 ; $i < $total ; $i++ ) {
   $tmpFilePath = $_FILES['image']['tmp_name'][$i];
 
   if ($tmpFilePath != ""){
@@ -38,28 +39,29 @@ for( $i=0 ; $i < $total ; $i++ ) {
     }
   }
 }
+
+
+
+
 $images_parameter = "[" . implode(",",$images_parameter)."]";
-
-
 foreach(explode(",",$colors) as $color){
   array_push($colors_parameter,"\"".$color."\"");
 }
 $colors_parameter = "[" . implode(",",$colors_parameter) ."]";
 
 
-
-
 foreach(explode(",",$sizes) as $size){
   array_push($sizes_parameter,"\"".$size."\"");
 }
 $sizes_parameter = "[" . implode(",",$sizes_parameter) ."]";
-$database->product_add($category_id,$code,$name,$price,$material,$brand,$style,$sizes_parameter,$colors_parameter,$images_parameter);
+$result = $database->product_add($category_id,$code,$name,$price,$material,$brand,$style,$sizes_parameter,$colors_parameter,$images_parameter);
 
 
-echo "1"; //done
+
+header("location:product_add.php?sent=$result");
 
 }else{
-  echo "2";//product code exist
+  header("location:product_add.php?res=codeExist");
 }
 
 ?>
