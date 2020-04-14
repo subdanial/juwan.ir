@@ -445,5 +445,10 @@ $categories = $database->categories_index();
     })
     //checkboxselet
     $(".categories:first").prop("checked", true);
+
+    $("#last_submit").click(function(){
+      $("#last_submit").prop("disabled", true);
+      $("#main_submit").prop("disabled", true);
+    })
   </script>
 </body>
