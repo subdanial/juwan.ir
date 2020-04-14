@@ -3,7 +3,7 @@ include('classes/autoload.php');
 $database = new Database();
 $cat_id = 1;
 $page_id = 1;
-$perpage = 3;
+$perpage = 36;
 $colors = "`color`";
 $materials = "`material`";
 $styles = "`style`";
