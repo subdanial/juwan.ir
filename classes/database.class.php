@@ -64,7 +64,7 @@ Class Database{
         $number_of_results = mysqli_num_rows($result);
         return($number_of_results);
     }
-    function products_show($category_id, $colors = "`color`",$materials = "`material`",$styles = "`style`",$brands = "`brand`" ,$price0 = "`0`" ,$price1 = "`100000000`" , $page = 1 ,$perpage = 2){
+    function products_show($category_id, $colors = "`color`",$materials = "`material`",$styles = "`style`",$brands = "`brand`" ,$price0 = "`0`" ,$price1 = "`100000000`" , $page = 1 ,$perpage =36){
         $page = ($page - 1)*$perpage;
         
         $query = "SELECT * FROM `products` WHERE `category_id` = $category_id AND `color` REGEXP ($colors) AND `material` in ($materials) AND `brand` in ($brands) AND `style` in ($styles) AND `price` BETWEEN $price0 AND $price1 LIMIT $page,$perpage ";
