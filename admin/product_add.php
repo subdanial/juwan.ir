@@ -386,6 +386,13 @@ $categories = $database->categories_index();
 
     //form_validator
     var form_is_valid = false;
+
+
+
+
+    $(document).ready(function(){
+
+    
     $("#main_submit").click(function (e) {
       e.preventDefault();
 
@@ -475,6 +482,7 @@ $categories = $database->categories_index();
       }
 
     });
+  });
 
     // bootstrapfile
     document.querySelector('.custom-file-input').addEventListener('change', function (e) {
