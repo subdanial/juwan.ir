@@ -134,9 +134,9 @@ $active = '';
                 <span class="fw-2 d-block f-15"><?=$product['name']?></span>
                 <span class="fw-2 d-block ">کد : <?=$product['code']?></span>
                 <hr>
-                <span class="fw-2 d-block mt-2">قیمت : </span>
+                <!-- <span class="fw-2 d-block mt-2">قیمت : </span>
                 <span class="fw-2 d-block f-15"><?= number_format($product['price'])?> تومان</span>
-                <hr>
+                <hr> -->
                 <span class="fw-2 d-block mt-2">رنگ های موجود : </span>
                 <div class="form-inline">
 

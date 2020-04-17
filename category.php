@@ -222,7 +222,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                         </div>
                         <hr>
                         <!-- style end -->
-                        <p>
+                        <!-- <p>
                             <a class="fw-2" data-toggle="collapse" href="#filter5" role="button" aria-expanded="true">
                                 قیمت
                             </a>
@@ -242,10 +242,10 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                                 <button class="btn d-block btn-dark btn-sm mt-3 w-85 ml-3 btn-price">جستجو</button>
                             </div>
                         </div>
-                        <hr>
+                        <hr> -->
 
 
-                        <!-- style end -->
+                        <!-- price end -->
                     </div>
                 </div>
 
@@ -282,7 +282,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                                     class="w-100 pl-2 pr-1 pt-1 pb-1 p-lg-2 d-block mx-auto" alt="">
                                 <span class="d-block  text-center fw-2"> <?=$product['name']?></span>
                                 <span class="d-block  text-center fw-2"> کد : <?=$product['code']?></span>
-                                <span class="d-block text-center"> <?=number_format($product['price'])?> تومان</span>
+                                <!-- <span class="d-block text-center"> <?=number_format($product['price'])?> تومان</span> -->
                             </a>
 
                         </div>
@@ -396,7 +396,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
             </div>
             <hr>
             <!-- style end -->
-            <p>
+            <!-- <p>
                 <a class="fw-2" data-toggle="collapse" href="#filter5" role="button" aria-expanded="true">
                     قیمت
                 </a>
@@ -416,10 +416,10 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                     <button class="btn d-block btn-dark btn-sm mt-3 w-85 ml-3 btn-price">جستجو</button>
                 </div>
             </div>
-            <hr>
+            <hr> -->
 
 
-            <!-- style end -->
+            <!-- price end -->
         </div>
 
 
