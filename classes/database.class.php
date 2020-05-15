@@ -16,7 +16,7 @@ Class Database{
         return($result);
     }
     function categories_index(){
-        $query = "SELECT * FROM `categories` ORDER BY `categories`.`ordering` ASC";
+        $query = "SELECT * FROM `categories` ORDER BY `categories`.`ordering` DESC";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         return($result);
