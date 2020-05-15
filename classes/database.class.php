@@ -67,7 +67,7 @@ Class Database{
     function products_show($category_id, $colors = "`color`",$materials = "`material`",$styles = "`style`",$brands = "`brand`" ,$price0 = "`0`" ,$price1 = "`100000000`" , $page = 1 ,$perpage =36){
         $page = ($page - 1)*$perpage;
         
-        $query = "SELECT * FROM `products` WHERE `category_id` = $category_id AND `color` REGEXP ($colors) AND `material` in ($materials) AND `brand` in ($brands) AND `style` in ($styles) AND `price` BETWEEN $price0 AND $price1 LIMIT $page,$perpage ";
+        $query = "SELECT * FROM `products` WHERE `category_id` = $category_id AND `color` REGEXP ($colors) AND `material` in ($materials) AND `brand` in ($brands) AND `style` in ($styles) AND `price` BETWEEN $price0 AND $price1 ORDER BY `products`.`id` DESC LIMIT $page,$perpage ";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         return($result);
