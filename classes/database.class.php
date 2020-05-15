@@ -16,13 +16,13 @@ Class Database{
         return($result);
     }
     function categories_index(){
-        $query = "SELECT * FROM `categories` ORDER BY `categories`.`ordering` DESC";
+        $query = "SELECT * FROM `categories` ORDER BY `categories`.`ordering` ASC";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         return($result);
     }
     function category_show($id){
-        $query = "SELECT * FROM `categories` WHERE `id` = $id ORDER BY `id` ASC";
+        $query = "SELECT * FROM `categories` WHERE `id` = $id";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         $result=mysqli_fetch_array($result);
@@ -67,7 +67,7 @@ Class Database{
     function products_show($category_id, $colors = "`color`",$materials = "`material`",$styles = "`style`",$brands = "`brand`" ,$price0 = "`0`" ,$price1 = "`100000000`" , $page = 1 ,$perpage =36){
         $page = ($page - 1)*$perpage;
         
-        $query = "SELECT * FROM `products` WHERE `category_id` = $category_id AND `color` REGEXP ($colors) AND `material` in ($materials) AND `brand` in ($brands) AND `style` in ($styles) AND `price` BETWEEN $price0 AND $price1 LIMIT $page,$perpage ";
+        $query = "SELECT * FROM `products` WHERE `category_id` = $category_id AND `color` REGEXP ($colors) AND `material` in ($materials) AND `brand` in ($brands) AND `style` in ($styles) AND `price` BETWEEN $price0 AND $price1 LIMIT $page,$perpage  ORDER BY `id` DESC";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         return($result);
