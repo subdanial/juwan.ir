@@ -288,7 +288,7 @@ $products =  $database->products_show($cat_id,$colors,$materials,$styles,$brands
                         </div>
                         <?php  $i++;endforeach; ?>
                         <!-- catalog end -->
-                        <nav class="d-block float-right">
+                        <nav class="d-block float-right w-100">
                             <ul class="pagination">
 
                                 <?php  for ($page=1;$page<=$number_of_pages;$page++) :?>
