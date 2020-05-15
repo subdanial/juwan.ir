@@ -22,7 +22,7 @@ Class Database{
         return($result);
     }
     function category_show($id){
-        $query = "SELECT * FROM `categories` WHERE `id` = $id";
+        $query = "SELECT * FROM `categories` WHERE `id` = $id ORDER BY `id` DESC";
         mysqli_query($this->connection, "SET NAMES utf8");
         $result = mysqli_query($this->connection,$query);
         $result=mysqli_fetch_array($result);
