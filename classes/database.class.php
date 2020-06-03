@@ -3,7 +3,7 @@ Class Database{
     const HOST = "localhost";
     const USERNAME = "danial";
     const PASSWORD = "Eloel241";
-    const DATABASE = "juwan_catalog";
+    const DATABASE = "juwan-catalog";
     
     public $connection;
 
