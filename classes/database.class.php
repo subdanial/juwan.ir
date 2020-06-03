@@ -2,7 +2,7 @@
 Class Database{
     const HOST = "localhost";
     const USERNAME = "danial";
-    const PASSWORD = "WTFIS0124";
+    const PASSWORD = "Eloel241";
     const DATABASE = "juwan_catalog";
     
     public $connection;
